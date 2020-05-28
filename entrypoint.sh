@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Exit on any script failures
 set -e -o pipefail
 
@@ -16,12 +15,4 @@ else
 #   exec su-exec root haproxy -f /etc/haproxy/haproxy.cfg &
 fi
 
-cat >>/etc/openconnect.cfg <<EOF
-
-user        ${OC_USER:?'missing OC_USER variable'}}
-password    ${OC_PASSWORD:?'missing OC_PASSWORD variable'}}
-
-EOF
-
-exec openconnect --config=/etc/openconnect.cfg "$@"
-# exec bash -c "$@"
+exec echo ${OC_PASSWORD:?'missing OC_PASSWORD variable'} | openconnect --passwd-on-stdin "$@"

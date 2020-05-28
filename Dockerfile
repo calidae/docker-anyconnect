@@ -15,4 +15,3 @@ COPY entrypoint.sh /
 EXPOSE 1111
 
 ENTRYPOINT ["/entrypoint.sh"]
-# CMD ["openconnect"]
