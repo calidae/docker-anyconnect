@@ -5,7 +5,7 @@ docker run --rm -ti \
     --cap-add=NET_ADMIN
     --device=/dev/ppp
     -e OC_PASSWORD=supersecret
-    ifeu/anyconnect
+    calidae/anyconnect
     vpn.example.com:443
     --user=janedoe
     --servercert pin-sha256:Ade//Wf45D7vHit6PGrdEUHuNKG4nXowPbd4BQoIt2U
